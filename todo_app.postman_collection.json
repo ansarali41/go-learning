@@ -1,0 +1,121 @@
+{
+    "info": {
+        "_postman_id": "b4e2d5f3-8b1c-4f8e-9d2a-7f98e12345",
+        "name": "Go Todo App",
+        "description": "A simple Todo API built with Go",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Todo",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Learn Go Programming\",\n    \"description\": \"Study Go fundamentals and build projects\",\n    \"completed\": false\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/todos",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["todos"]
+                },
+                "description": "Create a new todo item"
+            }
+        },
+        {
+            "name": "Get All Todos",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/todos",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["todos"]
+                },
+                "description": "Get all todo items"
+            }
+        },
+        {
+            "name": "Get Single Todo",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/todo?id=1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["todo"],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "1"
+                        }
+                    ]
+                },
+                "description": "Get a single todo item by ID"
+            }
+        },
+        {
+            "name": "Update Todo",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Learn Go Programming\",\n    \"description\": \"Study Go fundamentals and build projects\",\n    \"completed\": true\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/todos?id=1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["todos"],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "1"
+                        }
+                    ]
+                },
+                "description": "Update a todo item by ID"
+            }
+        },
+        {
+            "name": "Delete Todo",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/todos?id=1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["todos"],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "1"
+                        }
+                    ]
+                },
+                "description": "Delete a todo item by ID"
+            }
+        }
+    ]
+}
